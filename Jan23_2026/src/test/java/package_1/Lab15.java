@@ -23,7 +23,7 @@ public class Lab15 {
 		LocalDate inputDate = LocalDate.parse(dob);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		System.out.println("Independence:"+inputDate.format(formatter));
-		System.out.println("Welcome " + fn + " " + ln);
+		System.out.println("Welcome: " + fn + " " + ln);
 		
 	}
 
