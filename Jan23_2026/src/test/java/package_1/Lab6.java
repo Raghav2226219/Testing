@@ -13,6 +13,7 @@ public class Lab6 {
 //		System.out.println("Firstname: " + obj.getFirstName());
 //		System.out.println("Lastname: " + obj.getLastName());
 //		System.out.println("Gender: " + obj.getGender());
+		System.out.println("hm");
 	}
 
 }
