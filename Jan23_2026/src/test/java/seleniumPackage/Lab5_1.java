@@ -22,7 +22,6 @@ public class Lab5_1 {
 	String Warningmsg=driver.findElement(By.xpath("//div[@class='alert alert-danger alert-dismissible']")).getText();
 	System.out.println("Warning Message:"+Warningmsg);
 	
-	
 	}
  
 }
