@@ -1,25 +1,21 @@
 package seleniumPackage;
+
 import org.testng.annotations.Test;
- 
+
 import io.github.bonigarcia.wdm.WebDriverManager;
- 
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.BeforeClass;
- 
-import static org.testng.Assert.*;
- 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
- 
+
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -28,10 +24,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.AfterSuite;
- 
-public class TC_TestNG {
-	
-	WebDriver driver;
+
+public class Lab12 {
+WebDriver driver;
 	
 	String projectpath=System.getProperty("user.dir");
   @Test(dataProvider = "dp")
@@ -47,23 +42,23 @@ public class TC_TestNG {
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 			boolean dashborad=driver.findElement(By.xpath("//h6[text()='Dashboard']")).isDisplayed();
 			*/
-	  		obj.enterusername(username);
-	  		obj.enterpassword(password);
-	  		obj.clickonsubmit();
-	  		boolean dashboard=obj.dashboarddisplay();
-	  		
-	  		
-			if(dashboard==true)
-			{
-				System.out.println("login successful");
-				Assert.assertEquals(dashboard, true);
-			}
-			else
-			
-			{
-				System.out.println("login unsuccessful");
-				Assert.assertEquals(dashboard, false);
-			}
+//	  		obj.enterusername(username);
+//	  		obj.enterpassword(password);
+//	  		obj.clickonsubmit();
+//	  		boolean dashboard=obj.dashboarddisplay();
+//	  		
+//	  		
+//			if(dashboard==true)
+//			{
+//				System.out.println("login successful");
+//				Assert.assertEquals(dashboard, true);
+//			}
+//			else
+//			
+//			{
+//				System.out.println("login unsuccessful");
+//				Assert.assertEquals(dashboard, false);
+//			}
 			
 	
   }
@@ -89,12 +84,12 @@ public class TC_TestNG {
 	  String[][] data1=new String[1][3];
 	  
 	  Properties prob=new Properties();
-	  File f2=new File(projectpath+"\\input.properties");
+	  File f2=new File(projectpath+"\\config.properties");
 	  FileInputStream fs=new FileInputStream(f2);
 	  prob.load(fs);
 	   data1[0][0]=prob.getProperty("url");
-	  data1[0][1]=prob.getProperty("uname");
-	  data1[0][2]=prob.getProperty("pword");
+//	  data1[0][1]=prob.getProperty("uname");
+//	  data1[0][2]=prob.getProperty("pword");
 	 /* File f1=new File(projectpath+"\\data.xlsx");
 	  XSSFWorkbook workbook=new XSSFWorkbook(f1);
 	  XSSFSheet s1=workbook.getSheetAt(0);
@@ -137,6 +132,4 @@ public class TC_TestNG {
   public void afterSuite() {
 	  System.out.println("This is after suite");
   }
- 
 }
- 
