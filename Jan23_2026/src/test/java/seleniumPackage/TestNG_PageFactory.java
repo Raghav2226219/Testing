@@ -1,5 +1,6 @@
 package seleniumPackage;
 
+
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +22,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 
@@ -32,7 +34,7 @@ import org.testng.annotations.BeforeSuite;
 
 import org.testng.annotations.AfterSuite;
 
-public class TC_TestNG {
+public class TestNG_PageFactory{
 	WebDriver driver;
 
 	@Test(dataProvider = "dp")
@@ -41,7 +43,8 @@ public class TC_TestNG {
 
 		System.out.println("This is test");
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-		Login_POM obj = new Login_POM(driver);
+//		Login_POM obj = new Login_POM(driver);
+		Login_PageFactory obj = PageFactory.initElements(driver, Login_PageFactory.class);
 //		driver.findElement(By.name("username")).sendKeys(username);
 //		driver.findElement(By.name("password")).sendKeys(password);
 //		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -145,3 +148,4 @@ public class TC_TestNG {
 	}
 
 }
+
