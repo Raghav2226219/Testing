@@ -14,20 +14,18 @@ public class TC_FindElements {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver=new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 		driver.get("https://amazon.in");
-		
+
 		Thread.sleep(2000);
-		
-		List<WebElement> links=driver.findElements(By.tagName("a"));
+
+		List<WebElement> links = driver.findElements(By.tagName("a"));
 		System.out.println(links.size());
-		
-		for(WebElement link: links)
-		{
+
+		for (WebElement link : links) {
 			System.out.println(link.getText());
 		}
-		
+
 	}
 
 }
-

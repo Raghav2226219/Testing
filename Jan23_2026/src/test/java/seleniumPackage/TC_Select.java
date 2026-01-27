@@ -15,16 +15,16 @@ public class TC_Select {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://tutorialsninja.com/demo");
-		
+
 		driver.findElement(By.linkText("Desktops")).click();
 		driver.findElement(By.linkText("Mac (1)")).click();
-		
+
 		Select sort = new Select(driver.findElement(By.id("input-sort")));
-		
-		for(WebElement s1 : sort.getOptions()) {
+
+		for (WebElement s1 : sort.getOptions()) {
 			System.out.println(s1.getText());
 		}
-		
+
 		driver.quit();
 	}
 

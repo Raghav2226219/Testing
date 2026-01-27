@@ -13,27 +13,30 @@ public class Lab5_2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		   WebDriverManager.chromedriver().setup();
-	        WebDriver driver = new ChromeDriver();
-	 
-	        driver.get("https://tutorialsninja.com/demo");
-	        driver.manage().window().maximize();
-	 
-	        driver.findElement(By.xpath("//span[text()='My Account']")).click();
-	        driver.findElement(By.linkText("Register")).click();
-	 
-	        driver.findElement(By.id("input-firstname")).sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-	        driver.findElement(By.id("input-lastname")).sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-	        driver.findElement(By.id("input-email")).sendKeys("abc@mail.com");
-	        driver.findElement(By.id("input-telephone")).sendKeys("2222222222222222222222222222222222222222222222222222222222222222222222");
-	 
-	        driver.findElement(By.xpath("//input[@value='Continue']")).click();
-	 
-	        List<WebElement> errors = driver.findElements(By.cssSelector(".text-danger"));
-	        for (WebElement e : errors) {
-	            System.out.println("Error: " + e.getText());
-	        }
-	        
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("https://tutorialsninja.com/demo");
+		driver.manage().window().maximize();
+
+		driver.findElement(By.xpath("//span[text()='My Account']")).click();
+		driver.findElement(By.linkText("Register")).click();
+
+		driver.findElement(By.id("input-firstname"))
+				.sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		driver.findElement(By.id("input-lastname"))
+				.sendKeys("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		driver.findElement(By.id("input-email")).sendKeys("abc@mail.com");
+		driver.findElement(By.id("input-telephone"))
+				.sendKeys("2222222222222222222222222222222222222222222222222222222222222222222222");
+
+		driver.findElement(By.xpath("//input[@value='Continue']")).click();
+
+		List<WebElement> errors = driver.findElements(By.cssSelector(".text-danger"));
+		for (WebElement e : errors) {
+			System.out.println("Error: " + e.getText());
+		}
+
 //	        driver.quit();
 	}
 
